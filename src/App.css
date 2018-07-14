@@ -1,0 +1,44 @@
+.App {
+  text-align: center;
+}
+
+.App-logo {
+  animation: App-logo-spin infinite 20s linear;
+  height: 80px;
+}
+
+.App-header {
+  background: url("../../my-restaurant/src/background-burger.jpg");
+  height: 500px;
+  padding: 20px;
+  color: white;
+}
+
+.App-title {
+  font-size: 1.5em;
+}
+
+.App-intro {
+  font-size: large;
+}
+
+@keyframes App-logo-spin {
+  from { transform: rotate(0deg); }
+  to { transform: rotate(360deg); }
+}
+
+/*Pan*/
+
+.navbar{
+  margin-bottom: 0;
+}
+
+.App-logo-food {
+  width: 20%;
+}
+
+.jumbotron{
+  background: url("../../my-restaurant/src/background.jpg");
+  height: 400px;
+}
+
