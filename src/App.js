@@ -1,5 +1,6 @@
 import React, { Component } from 'react';
-import { Navbar, Button, Jumbotron, Form, FormGroup, FormControl, ControlLabel} from 'react-bootstrap';
+import { Navbar, Button, Jumbotron, Form, FormGroup, FormControl} from 'react-bootstrap';
+import { Link } from 'react-router-dom';
 import logo from './logo.png';
 import './App.css';
 import Header from './components/Header';
@@ -33,7 +34,9 @@ class App extends Component {
                 <Navbar.Text >
                   <Navbar.Link ><Header user={(this.state && this.state.user) ? this.state.user : ''} /></Navbar.Link>
                 </Navbar.Text>
-                <Navbar.Text pullRight>Have a great day!</Navbar.Text>
+                <Navbar.Text pullRight>
+                <Link style={{color: 'black'}} to="restaurants">View Restaurants</Link>
+                </Navbar.Text>
               </Navbar.Collapse>
             </Navbar>
 

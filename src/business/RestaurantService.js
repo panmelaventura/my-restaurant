@@ -19,9 +19,6 @@ export class RestaurantService {
       })
       .then(function(myJson) {
         resolve(myJson);
-      })
-      .catch(reason=>{
-        reject(reason);
       });
   });
   }

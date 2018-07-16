@@ -1,7 +1,7 @@
 import React from 'react';
 import RestaurantService from '../business/RestaurantService';
 
-export class Restaurant extends React.Component {
+class Restaurants extends React.Component {
   constructor(props) {
     super(props);
   }
@@ -44,7 +44,7 @@ export class Restaurant extends React.Component {
         {(this.state && this.state.restaurants ?
           <ul>
             {this.state.restaurants.map(mostrar => (
-              <li>
+              <li key={mostrar.id.toString()}>
                 Restaurante: {mostrar.name}
               </li>
             ))}
@@ -57,7 +57,7 @@ export class Restaurant extends React.Component {
         {(this.state && this.state.menus ?
           <ul>
             {this.state.menus.map(mostrarmenu => (
-              <li>
+              <li key={mostrarmenu.id.toString()}>
                 Menu: {mostrarmenu.name}
               </li>
             ))}
@@ -70,6 +70,6 @@ export class Restaurant extends React.Component {
     );
   }
 }
-export default Restaurant;
+export default Restaurants;
 
 

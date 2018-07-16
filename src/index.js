@@ -1,8 +1,8 @@
 import React from 'react';
 import ReactDOM from 'react-dom';
 import './index.css';
-import App from './App';
 import registerServiceWorker from './registerServiceWorker';
+import Rotas from './components/Rotas';
 
-ReactDOM.render(<App />, document.getElementById('root'));
+ReactDOM.render(<Rotas />, document.getElementById('root'));
 registerServiceWorker();
