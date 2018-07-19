@@ -11,6 +11,18 @@ export class RestaurantService {
     });
     }
 
+    getRestaurant(id) {
+      return new Promise((resolve, reject) => {
+      fetch('http://localhost:53690/api/restaurants/' + id)
+      .then(function(response) {
+        return response.json();
+      })
+      .then(function(myJson) {
+        resolve(myJson);
+      });
+  });
+  }
+
     getMenus() {
       return new Promise((resolve, reject) => {
       fetch('http://localhost:53690/api/menus')

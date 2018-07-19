@@ -1,12 +1,10 @@
-import React from 'react';
+import React, {Component} from 'react';
+import { Grid, Cell, Card, CardTitle, CardText, CardActions, Button } from 'react-mdl';
+import { Link } from 'react-router-dom';
 import RestaurantService from '../business/RestaurantService';
 
 class Restaurants extends React.Component {
-  constructor(props) {
-    super(props);
-  }
-
-  componentDidMount() {
+    componentDidMount() {
     console.log('Stateful component successfully mounted.');
 
     let restService = new RestaurantService();
@@ -32,26 +30,26 @@ class Restaurants extends React.Component {
   render() {
 
     return (
-      <div>
-        {(this.state && this.state.meuRestaurantePrincipal ?
-          <h1> Welcome to the {this.state.meuRestaurantePrincipal.name} website! </h1> : '')}
-
-
+      <div className="restaurants-content">
         <h3>Lista de Restaurantes</h3>
+          {/*{(this.state && this.state.meuRestaurantePrincipal ?
+          <h1> Welcome to the {this.state.meuRestaurantePrincipal.name} website! </h1> : '')}*/} 
+            {(this.state && this.state.restaurants ?          
+                this.state.restaurants.map(mostrar => (
+                  <Card shadow={0} style={{width: '320px', height: '320px', margin: 'auto'}} 
+                  key={mostrar.id.toString()}>
+                    Restaurante: {mostrar.name}
+                    <CardActions border>
+                        <Button colored>
+                          <Link to={`/restaurantMenu/${mostrar.id}`}>Menu</Link>  
+                        </Button>
+                    </CardActions>
+                    </Card>
+                ))
+              : ''
+            )}
 
-
-
-        {(this.state && this.state.restaurants ?
-          <ul>
-            {this.state.restaurants.map(mostrar => (
-              <li key={mostrar.id.toString()}>
-                Restaurante: {mostrar.name}
-              </li>
-            ))}
-          </ul>
-          : ''
-        )}
-
+       <div>    
         <h3>Lista de Menus</h3>
 
         {(this.state && this.state.menus ?
@@ -64,9 +62,8 @@ class Restaurants extends React.Component {
           </ul>
           : ''
         )}
-
       </div>
-
+    </div>
     );
   }
 }
